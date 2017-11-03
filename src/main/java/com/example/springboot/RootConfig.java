@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @data 2017/11/1
  */
 @Configuration
+//扫描mapper的路径
 @MapperScan("com.example.springboot.dao")
 public class RootConfig {
 

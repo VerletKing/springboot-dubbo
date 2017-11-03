@@ -1,7 +1,9 @@
 package com.example.springboot;
 
 import com.example.springboot.dao.StudentMapper;
+import com.example.springboot.dao.TeacherDao;
 import com.example.springboot.entity.Student;
+import com.example.springboot.entity.Teacher;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -20,6 +22,9 @@ public class SpringbootApplicationTests {
     @Autowired
     private StudentMapper studentMapper;
 
+    @Autowired
+    private TeacherDao teacherDao;
+
 	@Test
 	public void contextLoads() {
 	    PageHelper.startPage(1,3);
@@ -27,5 +32,15 @@ public class SpringbootApplicationTests {
         PageInfo pageInfo = new PageInfo(studentList);
 
     }
+
+    @Test
+    public void mongodb(){
+        Teacher teacher = new Teacher();
+        teacher.setId(1);
+        teacher.setName("王五");
+        teacher.setSalary("100000.00");
+	    teacherDao.save(teacher);
+    }
+
 
 }
