@@ -1,10 +1,11 @@
-package com.example.springboot.service.Impl;
+package com.example.springboot.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.example.springboot.dao.StudentMapper;
 import com.example.springboot.entity.Student;
 import com.example.springboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -29,5 +30,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findById(Integer id) {
         return studentMapper.selectByPrimaryKey(id);
+    }
+
+    @Cacheable(value = "student")
+    @Override
+    public List<Student> findByName(String name) {
+        return studentMapper.findByName(name);
     }
 }

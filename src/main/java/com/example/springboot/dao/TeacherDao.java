@@ -10,4 +10,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @data 2017/11/3
  */
 public interface TeacherDao extends MongoRepository<Teacher,Integer>{
+
 }

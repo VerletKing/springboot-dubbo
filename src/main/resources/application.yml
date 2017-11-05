@@ -53,10 +53,6 @@ pagehelper:
     PageRowBounds: true
     returnPageInfo: check
 
-
-
 logging:
   level:
     com.example.springboot.dao: debug
-
-

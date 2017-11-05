@@ -26,4 +26,12 @@ public interface StudentService {
      * @return Student
      */
     Student findById(Integer id);
+
+    /**
+     * 根据姓名查找
+     * @param name 姓名
+     * @return 学生列表
+     */
+    List<Student> findByName(String name);
+
 }
